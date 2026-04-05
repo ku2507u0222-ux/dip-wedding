@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dip & Deepika – Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #0d0608;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    padding-bottom: 60px;
+  }
+
+  /* ── MAIN HERO CARD ── */
+  .card {
+    width: 420px;
+    height: 680px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+  }
+
+  .sky {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg,#5bc8f5 0%,#87d9f7 25%,#b0e8fb 45%,#d4f0fe 60%,#e8c8a0 75%,#d4956a 85%,#c07848 100%);
+    z-index: 0;
+  }
+
+  .cloud { position:absolute; border-radius:50%; background:rgba(255,255,255,0.85); filter:blur(6px); animation:driftCloud linear infinite; }
+  .c1{width:90px;height:30px;top:8%;left:-100px;animation-duration:18s;}
+  .c2{width:60px;height:20px;top:14%;left:-80px;animation-duration:22s;animation-delay:-6s;}
+  .c3{width:110px;height:35px;top:20%;left:-120px;animation-duration:26s;animation-delay:-12s;}
+  @keyframes driftCloud{from{transform:translateX(0);}to{transform:translateX(620px);}}
+
+  .scene{position:absolute;inset:0;z-index:1;width:100%;height:100%;}
+
+  .dove{position:absolute;z-index:4;}
+  .dove1{top:12%;right:14%;animation:doveFloat1 6s ease-in-out infinite;}
+  .dove2{top:8%;right:28%;animation:doveFloat2 7s ease-in-out infinite;animation-delay:-2s;}
+  .dove3{top:18%;right:6%;animation:doveFloat3 8s ease-in-out infinite;animation-delay:-4s;}
+  @keyframes doveFloat1{0%,100%{transform:translate(0,0) rotate(-5deg);}50%{transform:translate(-8px,-12px) rotate(5deg);}}
+  @keyframes doveFloat2{0%,100%{transform:translate(0,0) rotate(8deg);}50%{transform:translate(6px,-10px) rotate(-4deg);}}
+  @keyframes doveFloat3{0%,100%{transform:translate(0,0) rotate(-3deg);}50%{transform:translate(-5px,-8px) rotate(6deg);}}
+
+  .petal{position:absolute;z-index:5;animation:petalFall linear infinite;opacity:0.85;}
+  @keyframes petalFall{0%{transform:translateY(-40px) rotate(0deg);opacity:0.9;}100%{transform:translateY(720px) rotate(720deg);opacity:0;}}
+
+  .text-layer{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;padding-top:36px;text-align:center;}
+  .wedding-day-label{font-family:'Great Vibes',cursive;font-size:28px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.4);animation:fadeDown 1.2s ease both;}
+  .date-label{font-family:'Cinzel',serif;font-size:15px;color:#fff8ee;letter-spacing:4px;margin-top:4px;animation:fadeDown 1.4s ease both;}
+  .names-wrap{margin-top:190px;display:flex;flex-direction:column;align-items:center;animation:fadeUp 1.6s ease both;}
+  .groom-name,.bride-name{font-family:'Great Vibes',cursive;font-size:72px;color:#fff;line-height:1;text-shadow:0 4px 20px rgba(0,0,0,0.5);}
+  .ampersand{font-family:'Great Vibes',cursive;font-size:44px;color:#ffe8b0;line-height:1;margin:-6px 0;}
+
+  .venue-strip{position:absolute;bottom:0;left:0;right:0;z-index:11;padding:16px 24px 20px;background:linear-gradient(0deg,rgba(0,0,0,0.55),transparent);display:flex;flex-direction:column;align-items:center;gap:4px;}
+  .venue-line{display:flex;align-items:center;gap:12px;}
+  .venue-line::before,.venue-line::after{content:'';display:block;width:50px;height:0.5px;background:rgba(255,220,160,0.7);}
+  .venue-text{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#ffe8b0;text-transform:uppercase;}
+  .venue-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#fff;letter-spacing:1px;}
+
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+  /* ── EVENTS SECTION ── */
+  .events-section{width:420px;background:#110609;position:relative;overflow:hidden;}
+  .events-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 20%,rgba(180,30,60,0.1) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(200,130,20,0.08) 0%,transparent 60%);pointer-events:none;}
+
+  .gold-divider{width:100%;display:flex;align-items:center;justify-content:center;padding:28px 30px 0;gap:10px;}
+  .gold-divider::before,.gold-divider::after{content:'';flex:1;height:0.5px;background:linear-gradient(90deg,transparent,#c8902a,transparent);}
+
+  .events-title{font-family:'Great Vibes',cursive;font-size:38px;color:#e8b84b;text-align:center;padding:6px 0 22px;text-shadow:0 0 30px rgba(232,184,75,0.3);}
+
+  .events-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 16px 16px;}
+
+  .event-card{border-radius:12px;overflow:hidden;position:relative;border:0.5px solid rgba(200,144,42,0.25);}
+  .event-card.full-width{grid-column:1 / -1;}
+
+  .event-bg{position:absolute;inset:0;z-index:0;}
+  .ev-mehendi .event-bg{background:linear-gradient(135deg,#0d2a0a,#1a4a10,#0f3a0c);}
+  .ev-sangeet .event-bg{background:linear-gradient(135deg,#1a0830,#2d1050,#1a0838);}
+  .ev-haldi   .event-bg{background:linear-gradient(135deg,#2a1800,#4a2e00,#3a2000);}
+  .ev-baraat  .event-bg{background:linear-gradient(135deg,#00182a,#002848,#001830);}
+  .ev-wedding .event-bg{background:linear-gradient(135deg,#2a0010,#500020,#3a0018);}
+  .ev-reception .event-bg{background:linear-gradient(135deg,#1a1200,#3a2a00,#2a1c00);}
+
+  .event-content{position:relative;z-index:1;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;}
+
+  .event-icon-wrap{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:5px;border:0.5px solid rgba(255,220,120,0.25);}
+  .ev-mehendi .event-icon-wrap{background:rgba(50,140,20,0.2);}
+  .ev-sangeet .event-icon-wrap{background:rgba(140,40,200,0.2);}
+  .ev-haldi   .event-icon-wrap{background:rgba(220,140,0,0.2);}
+  .ev-baraat  .event-icon-wrap{background:rgba(20,100,200,0.2);}
+  .ev-wedding .event-icon-wrap{background:rgba(200,20,60,0.2);}
+  .ev-reception .event-icon-wrap{background:rgba(200,160,0,0.2);}
+
+  .event-name{font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;}
+  .ev-mehendi   .event-name{color:#7de870;}
+  .ev-sangeet   .event-name{color:#c890f8;}
+  .ev-haldi     .event-name{color:#f8c840;}
+  .ev-baraat    .event-name{color:#70c8f8;}
+  .ev-wedding   .event-name{color:#f87090;}
+  .ev-reception .event-name{color:#f8d870;}
+
+  .event-date{font-family:'Cormorant Garamond',serif;font-size:13.5px;color:rgba(255,240,210,0.85);font-style:italic;}
+  .event-time{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:1.5px;color:rgba(255,220,150,0.6);text-transform:uppercase;}
+  .event-desc{font-family:'Cormorant Garamond',serif;font-size:11.5px;color:rgba(255,220,190,0.5);font-style:italic;line-height:1.4;margin-top:1px;}
+
+  /* ── FOOTER ── */
+  .inv-footer{width:420px;padding:20px 30px 36px;background:#110609;display:flex;flex-direction:column;align-items:center;gap:10px;border-top:0.5px solid rgba(200,144,42,0.18);}
+  .footer-msg{font-family:'Great Vibes',cursive;font-size:22px;color:#e8b84b;text-align:center;}
+  .footer-names{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:3px;color:rgba(255,220,150,0.45);text-align:center;text-transform:uppercase;}
+  .footer-bar{width:60px;height:0.5px;background:linear-gradient(90deg,transparent,#c8902a,transparent);}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="card">
+  <div class="sky"></div>
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+
+  <svg class="scene" viewBox="0 0 420 680" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id="sunGlow" cx="50%" cy="30%" r="40%"><stop offset="0%" stop-color="#fff8e0" stop-opacity="0.5"/><stop offset="100%" stop-color="#fff8e0" stop-opacity="0"/></radialGradient>
+      <linearGradient id="palaceGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5e8d0"/><stop offset="100%" stop-color="#c9a87c"/></linearGradient>
+      <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a8d8f0"/><stop offset="100%" stop-color="#7ab8d8"/></linearGradient>
+    </defs>
+    <ellipse cx="210" cy="180" rx="130" ry="90" fill="url(#sunGlow)"/>
+    <rect x="0" y="520" width="420" height="160" fill="#8ca060"/>
+    <rect x="0" y="520" width="420" height="18" fill="#a0b870"/>
+    <rect x="20" y="300" width="100" height="230" fill="url(#palaceGrad)" rx="2"/>
+    <rect x="30" y="315" width="22" height="30" fill="#c8e4f0" rx="2" opacity="0.7"/><rect x="62" y="315" width="22" height="30" fill="#c8e4f0" rx="2" opacity="0.7"/><rect x="94" y="315" width="22" height="30" fill="#c8e4f0" rx="2" opacity="0.7"/>
+    <rect x="30" y="360" width="22" height="30" fill="#c8e4f0" rx="11 11 2 2" opacity="0.6"/><rect x="62" y="360" width="22" height="30" fill="#c8e4f0" rx="11 11 2 2" opacity="0.6"/><rect x="94" y="360" width="22" height="30" fill="#c8e4f0" rx="11 11 2 2" opacity="0.6"/>
+    <rect x="20" y="300" width="6" height="230" fill="#e0c898" opacity="0.6"/><rect x="114" y="300" width="6" height="230" fill="#e0c898" opacity="0.6"/>
+    <rect x="300" y="300" width="100" height="230" fill="url(#palaceGrad)" rx="2"/>
+    <rect x="304" y="315" width="22" height="30" fill="#c8e4f0" rx="2" opacity="0.7"/><rect x="336" y="315" width="22" height="30" fill="#c8e4f0" rx="2" opacity="0.7"/><rect x="368" y="315" width="22" height="30" fill="#c8e4f0" rx="2" opacity="0.7"/>
+    <rect x="304" y="360" width="22" height="30" fill="#c8e4f0" rx="11 11 2 2" opacity="0.6"/><rect x="336" y="360" width="22" height="30" fill="#c8e4f0" rx="11 11 2 2" opacity="0.6"/><rect x="368" y="360" width="22" height="30" fill="#c8e4f0" rx="11 11 2 2" opacity="0.6"/>
+    <rect x="300" y="300" width="6" height="230" fill="#e0c898" opacity="0.6"/><rect x="394" y="300" width="6" height="230" fill="#e0c898" opacity="0.6"/>
+    <rect x="115" y="260" width="190" height="270" fill="url(#palaceGrad)" rx="2"/>
+    <ellipse cx="210" cy="255" rx="70" ry="25" fill="#f0ddb0"/>
+    <rect x="150" y="230" width="120" height="30" fill="#e8d098" rx="2"/>
+    <polygon points="210,195 190,230 230,230" fill="#d4b880"/>
+    <rect x="204" y="185" width="12" height="20" fill="#c8a870"/>
+    <rect x="133" y="280" width="26" height="38" fill="#c8e4f0" rx="13 13 2 2" opacity="0.75"/>
+    <rect x="172" y="280" width="26" height="38" fill="#c8e4f0" rx="13 13 2 2" opacity="0.75"/>
+    <rect x="222" y="280" width="26" height="38" fill="#c8e4f0" rx="13 13 2 2" opacity="0.75"/>
+    <rect x="261" y="280" width="26" height="38" fill="#c8e4f0" rx="13 13 2 2" opacity="0.75"/>
+    <rect x="185" y="390" width="50" height="70" fill="#8b6840" rx="25 25 2 2" opacity="0.8"/>
+    <rect x="190" y="395" width="40" height="60" fill="#c8e4f0" rx="20 20 2 2" opacity="0.5"/>
+    <rect x="160" y="458" width="100" height="12" fill="#d4b880" rx="2"/><rect x="150" y="468" width="120" height="12" fill="#c8a870" rx="2"/><rect x="140" y="478" width="140" height="12" fill="#bc9860" rx="2"/><rect x="130" y="488" width="160" height="12" fill="#b08850" rx="2"/><rect x="120" y="498" width="180" height="22" fill="#a07840" rx="2"/>
+    <ellipse cx="210" cy="565" rx="95" ry="28" fill="url(#waterGrad)" opacity="0.9"/>
+    <ellipse cx="210" cy="560" rx="95" ry="28" fill="none" stroke="#b8d8e8" stroke-width="3" opacity="0.6"/>
+    <rect x="203" y="505" width="14" height="60" fill="#d4b880" rx="3"/>
+    <ellipse cx="210" cy="504" rx="32" ry="10" fill="#c8a870"/>
+    <ellipse cx="210" cy="498" rx="3" ry="18" fill="#a8d8f0" opacity="0.7"/>
+    <ellipse cx="198" cy="503" rx="2.5" ry="12" fill="#a8d8f0" opacity="0.55" transform="rotate(-18,198,515)"/>
+    <ellipse cx="222" cy="503" rx="2.5" ry="12" fill="#a8d8f0" opacity="0.55" transform="rotate(18,222,515)"/>
+    <ellipse cx="30" cy="645" rx="38" ry="32" fill="#1a5e1a" opacity="0.9"/><ellipse cx="70" cy="650" rx="34" ry="28" fill="#156015" opacity="0.85"/>
+    <circle cx="18" cy="630" r="18" fill="#c0182a"/><circle cx="18" cy="630" r="12" fill="#d42030"/><circle cx="18" cy="630" r="6" fill="#e83840"/>
+    <circle cx="44" cy="622" r="16" fill="#b81428"/><circle cx="44" cy="622" r="10" fill="#cc2038"/><circle cx="44" cy="622" r="5" fill="#e03048"/>
+    <circle cx="68" cy="628" r="17" fill="#c01828"/><circle cx="68" cy="628" r="11" fill="#d42838"/><circle cx="68" cy="628" r="5" fill="#e83848"/>
+    <circle cx="8" cy="648" r="14" fill="#f0e8e0"/><circle cx="8" cy="648" r="8" fill="#f8f0f0"/><circle cx="8" cy="648" r="3" fill="#fff8f0"/>
+    <circle cx="90" cy="638" r="13" fill="#f0e8e0"/><circle cx="90" cy="638" r="8" fill="#f8f0f0"/><circle cx="90" cy="638" r="3" fill="#fff8f0"/>
+    <ellipse cx="380" cy="645" rx="38" ry="32" fill="#1a5e1a" opacity="0.9"/><ellipse cx="345" cy="650" rx="34" ry="28" fill="#156015" opacity="0.85"/>
+    <circle cx="402" cy="630" r="18" fill="#c0182a"/><circle cx="402" cy="630" r="12" fill="#d42030"/><circle cx="402" cy="630" r="6" fill="#e83840"/>
+    <circle cx="376" cy="622" r="16" fill="#b81428"/><circle cx="376" cy="622" r="10" fill="#cc2038"/><circle cx="376" cy="622" r="5" fill="#e03048"/>
+    <circle cx="352" cy="628" r="17" fill="#c01828"/><circle cx="352" cy="628" r="11" fill="#d42838"/><circle cx="352" cy="628" r="5" fill="#e83848"/>
+    <circle cx="412" cy="648" r="14" fill="#f0e8e0"/><circle cx="412" cy="648" r="8" fill="#f8f0f0"/><circle cx="412" cy="648" r="3" fill="#fff8f0"/>
+    <circle cx="330" cy="638" r="13" fill="#f0e8e0"/><circle cx="330" cy="638" r="8" fill="#f8f0f0"/><circle cx="330" cy="638" r="3" fill="#fff8f0"/>
+    <ellipse cx="115" cy="535" rx="8" ry="4" fill="#e02838" opacity="0.7" transform="rotate(-25,115,535)"/>
+    <ellipse cx="290" cy="542" rx="7" ry="3" fill="#e02838" opacity="0.6" transform="rotate(15,290,542)"/>
+    <ellipse cx="165" cy="550" rx="6" ry="3" fill="#f0e0d8" opacity="0.75" transform="rotate(40,165,550)"/>
+    <ellipse cx="260" cy="548" rx="7" ry="3" fill="#e02838" opacity="0.65" transform="rotate(-30,260,548)"/>
+  </svg>
+
+  <div class="dove dove1"><svg viewBox="0 0 60 40" width="40" height="28"><path d="M30 20 C20 10,5 8,2 18 C8 14,18 16,30 22 C42 16,52 14,58 18 C55 8,40 10,30 20Z" fill="white"/><path d="M30 22 C28 30,24 36,20 38 C26 36,32 32,30 22Z" fill="white"/><circle cx="22" cy="17" r="2" fill="#333"/></svg></div>
+  <div class="dove dove2"><svg viewBox="0 0 50 35" width="34" height="24"><path d="M25 17 C17 8,4 7,2 15 C7 12,16 14,25 19 C34 14,43 12,48 15 C46 7,33 8,25 17Z" fill="white"/><path d="M25 19 C23 26,20 31,17 33 C22 31,27 27,25 19Z" fill="white"/><circle cx="18" cy="14" r="1.5" fill="#333"/></svg></div>
+  <div class="dove dove3"><svg viewBox="0 0 45 32" width="30" height="22"><path d="M22 15 C15 7,3 6,1 13 C6 10,14 12,22 17 C30 12,38 10,43 13 C41 6,29 7,22 15Z" fill="white"/><path d="M22 17 C20 23,17 28,14 30 C19 28,24 24,22 17Z" fill="white"/><circle cx="15" cy="12" r="1.5" fill="#333"/></svg></div>
+
+  <div class="text-layer">
+    <div class="wedding-day-label">Wedding Day</div>
+    <div class="date-label">15 · 05 · 2026</div>
+    <div class="names-wrap">
+      <div class="groom-name">Dip</div>
+      <div class="ampersand">&amp;</div>
+      <div class="bride-name">Deepika</div>
+    </div>
+  </div>
+
+  <div class="venue-strip">
+    <div class="venue-line"><span class="venue-text">Join us at</span></div>
+    <div class="venue-name">Dabhoda, Gandhinagar</div>
+  </div>
+</div>
+
+<!-- EVENTS -->
+<div class="events-section">
+  <div class="gold-divider">
+    <svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 2 L15 9 L22 9 L16.5 13.5 L18.5 20.5 L13 16.5 L7.5 20.5 L9.5 13.5 L4 9 L11 9 Z" fill="#c8902a" opacity="0.9"/></svg>
+  </div>
+
+  <div class="events-title">Our Celebrations</div>
+
+  <div class="events-grid">
+
+    <!-- Mehendi -->
+    <div class="event-card ev-mehendi">
+      <div class="event-bg"></div>
+      <div class="event-content">
+        <div class="event-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3C9 3 6 5 5 8C4 11 5 14 7 16C8.5 17.5 9 19 9 21H15C15 19 15.5 17.5 17 16C19 14 20 11 19 8C18 5 15 3 12 3Z" fill="#4ade80" opacity="0.85"/>
+            <circle cx="12" cy="11" r="3" fill="#166534" opacity="0.7"/>
+            <path d="M9 21H15" stroke="#86efac" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="event-name">Mehendi</div>
+        <div class="event-date">13th May 2026</div>
+        <div class="event-time">4:00 PM Onwards</div>
+        <div class="event-desc">Henna &amp; happiness</div>
+      </div>
+    </div>
+
+    <!-- Sangeet -->
+    <div class="event-card ev-sangeet">
+      <div class="event-bg"></div>
+      <div class="event-content">
+        <div class="event-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18V6L21 4V16" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="6" cy="18" r="3" fill="#a855f7" opacity="0.85"/>
+            <circle cx="18" cy="16" r="3" fill="#a855f7" opacity="0.85"/>
+          </svg>
+        </div>
+        <div class="event-name">Sangeet</div>
+        <div class="event-date">13th May 2026</div>
+        <div class="event-time">8:00 PM Onwards</div>
+        <div class="event-desc">Music &amp; dance night</div>
+      </div>
+    </div>
+
+    <!-- Haldi -->
+    <div class="event-card ev-haldi">
+      <div class="event-bg"></div>
+      <div class="event-content">
+        <div class="event-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <ellipse cx="12" cy="14" rx="7" ry="5" fill="#facc15" opacity="0.8"/>
+            <path d="M8 10 Q12 4 16 10" stroke="#fbbf24" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <ellipse cx="12" cy="14" rx="3.5" ry="2.5" fill="#f59e0b" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="event-name">Haldi</div>
+        <div class="event-date">14th May 2026</div>
+        <div class="event-time">10:00 AM Onwards</div>
+        <div class="event-desc">Turmeric blessings</div>
+      </div>
+    </div>
+
+    <!-- Baraat -->
+    <div class="event-card ev-baraat">
+      <div class="event-bg"></div>
+      <div class="event-content">
+        <div class="event-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L14 8H20L15 12L17 18L12 14L7 18L9 12L4 8H10Z" fill="#38bdf8" opacity="0.85"/>
+          </svg>
+        </div>
+        <div class="event-name">Baraat</div>
+        <div class="event-date">15th May 2026</div>
+        <div class="event-time">9:00 AM Onwards</div>
+        <div class="event-desc">Groom's procession</div>
+      </div>
+    </div>
+
+    <!-- Wedding Ceremony — full width -->
+    <div class="event-card ev-wedding full-width">
+      <div class="event-bg"></div>
+      <div class="event-content">
+        <div class="event-icon-wrap" style="width:54px;height:54px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z" fill="#fb7185" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="event-name">Wedding Ceremony</div>
+        <div class="event-date">15th May 2026</div>
+        <div class="event-time">11:00 AM · Dabhoda, Gandhinagar</div>
+        <div class="event-desc">Sacred vows &amp; saat pheras under the holy fire</div>
+      </div>
+    </div>
+
+    <!-- Reception — full width -->
+    <div class="event-card ev-reception full-width">
+      <div class="event-bg"></div>
+      <div class="event-content">
+        <div class="event-icon-wrap" style="width:54px;height:54px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L14.4 8.8L21.6 9.2L16.2 13.8L18 21L12 17.2L6 21L7.8 13.8L2.4 9.2L9.6 8.8Z" fill="#fbbf24" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="event-name">Reception</div>
+        <div class="event-date">15th May 2026</div>
+        <div class="event-time">7:00 PM Onwards · Grand Celebration</div>
+        <div class="event-desc">Dinner, dancing &amp; a night to remember forever</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="inv-footer">
+  <div class="footer-bar"></div>
+  <div class="footer-msg">With love &amp; joy, we await you!</div>
+  <div class="footer-names">DIP &nbsp;✦&nbsp; DEEPIKA &nbsp;✦&nbsp; 15 · 05 · 2026</div>
+  <div class="footer-bar"></div>
+</div>
+
+<script>
+  const card = document.querySelector('.card');
+  const cols = ['#e02838','#c81828','#f0e0d8','#fff0f0','#d41828','#ffb8b8'];
+  for(let i=0;i<18;i++){
+    const p=document.createElement('div');
+    p.className='petal';
+    const s=6+Math.random()*10;
+    p.style.cssText=`width:${s}px;height:${s*.7}px;left:${Math.random()*100}%;top:${-10-Math.random()*10}%;background:${cols[Math.floor(Math.random()*cols.length)]};animation-duration:${5+Math.random()*8}s;animation-delay:${-Math.random()*12}s;transform:rotate(${Math.random()*360}deg);border-radius:${Math.random()>.5?'50% 0 50% 0':'50%'};`;
+    card.appendChild(p);
+  }
+</script>
+</body>
+</html>
